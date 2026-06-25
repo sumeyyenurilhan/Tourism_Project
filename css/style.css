@@ -837,10 +837,11 @@ footer p {
     margin: 10rem auto 5rem auto;
 }
 
+
 .ekler .container {
     display: grid;
-    grid-template-columns: 25rem auto;
-    padding: 3rem;
+    grid-template-columns: 22rem auto;
+    padding: 2rem;
 }
 
 .ekler .container .image {
@@ -852,8 +853,8 @@ footer p {
     margin-top: 8rem;
 }
 .ekler .container .image img{
-    width: 22rem;
-    height: 22rem;
+    width: 20rem;
+    height: 20rem;
 }
 
 .ekler .container .contents {
