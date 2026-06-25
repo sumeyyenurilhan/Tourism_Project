@@ -1,13 +1,3 @@
-var icon = document.getElementById("icon");
-icon.onclick = function() {
-    document.body.classList.toggle("dark-theme");
-    if (document.body.classList.contains("dark-theme")) {
-        icon.src = "images/sun.png";
-    } else {
-        icon.src = "images/moon.png";
-    }
-};
-
 
 const btns = document.querySelectorAll('.nav-btn');
 const slides = document.querySelectorAll('.slider');
@@ -57,7 +47,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-var countDownDate = new Date("July 10, 2023 00:00:00").getTime();
+var countDownDate = new Date("July 10, 2029 00:00:00").getTime();
 var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;

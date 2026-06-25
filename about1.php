@@ -1,14 +1,14 @@
 <?php
-    include("yonetim/ayar.php");
+    include("admin/config.php");
 ?>
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE-Edge">
-    <title>Hakkımızda</title>
+    <title>About</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -23,79 +23,66 @@
     <div class="hero">
         <header class="header">
             <nav class="nav">
-                <a href="home.php" aria-label="home"><img src="images/logo.png" class="logo" alt=""></a>
+                <a href="home.php" aria-label="home"><img src="images/logo.png" class="logo" alt="" width="200"></a>
                 <ul class="dropdown">
                     <li><a><img src="images/bar.png" class="bar"></a>
                         <ul>
-                            <li><a href="home.php">Ana Sayfa</a></li>
-                            <li><a href="about1.php" class="active">Hakkımızda</a></li>
-                            <li><a href="travels.php">Seyahatler</a></li>
-                            <li><a href="contact.php">İletişim</a></li>
+                            <li><a href="home.php" class="active">Home</a></li>
+                            <li><a href="about1.php">About</a></li>
+                            <li><a href="travels.php">Travels</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
-                <img src="images/moon.png" id="icon" alt="">
             </nav>
-            <script>
-                var icon = document.getElementById("icon");
-                icon.onclick = function() {
-                    document.body.classList.toggle("dark-theme");
-                    if (document.body.classList.contains("dark-theme")) {
-                        icon.src = "images/sun.png";
-                    } else {
-                        icon.src = "images/moon.png";
-                    }
-                };
-            </script>
         </header>
         <div class="high">
             <div class="class1">
                 <section class="about" id="about" data-aos="fade-up">
                     <div class="article">
                         <hr class="b">
-                        <div><a href="about1.php" class="active">Vizyon ve Misyonumuz</a></div>
-                        <div><a href="about2.php">Seyahat Rehberi</a></div>
-                        <div><a href="about3.php">Gereklilikler</a></div>
+                        <div><a href="about1.php" class="active">Our Vision and Mission</a></div>
+                        <div><a href="about2.php">Travel Guide</a></div>
+                        <div><a href="about3.php">Requirements</a></div>
                         <hr>
                     </div>
                     <div class="article1">
-                        <h3 class="heading"><span>Vizyon ve Misyonumuz</span> </h3>
+                        <h3 class="heading"><span>Our Vision and Mission</span> </h3>
                         <p><?php
-                        $sorgu = $baglan->query("select * from hakkimizda1");
+                        $sorgu = $baglan->query("select * from about_us_1");
                         $satir = $sorgu->fetch_object();
                         echo "$satir->aciklama";
                         ?></p>
                     </div>
                 </section>
             </div>
-        </div>
-        <footer>
+        </div><footer>
             <div class="container" data-aos="fade-up">
                 <div class="ek" id="ek">
-                    <h3>hazır linkler</h3>
-                    <div><a href="home.php">Ana Sayfa</a></div>
-                    <div><a href="about.php">Hakkımızda</a></div>
-                    <div><a href="travels.php">Seyahatlerimiz</a></div>
-                    <div><a href="contact.php">İletişim</a></div>
+                    <h3>Quick Links</h3>
+                    <div><a href="home.php">Home</a></div>
+                    <div><a href="about1.php">About</a></div>
+                    <div><a href="travels.php">Travels</a></div>
+                    <div><a href="contact.php">Contact</a></div>
                 </div>
                 <div class="ek" id="ek">
-                    <h3>Seyahatler</h3>
-                    <div><a href="travels.php">Yurt İçi Turlar</a></div>
-                    <div><a href="travels.php">Yurt Dışı Turlar</a></div>
-                    <div><a href="travels.php">Mevsim Turları</a></div>
-                    <div><a href="travels.php">Gemi Turları</a></div>
+                    <h3>Travels</h3>
+                    <div><a href="travels.php">Domestic Tours</a></div>
+                    <div><a href="travels.php">International Tours</a></div>
+                    <div><a href="travels.php">Season Tour</a></div>
+                    <div><a href="travels.php">Ship Tours</a></div>
                 </div>
                 <div class="ek" id="ek">
-                    <h3>İletişim bilgileri</h3>
+                    <h3>Contact</h3>
                     <div>
                         <a href="#"><i class="fas fa-phone"></i>+0213-589-74-10</a>
                     </div>
                     <div>
-                        <a href="#" class="lower"><i class="fas fa-envelope"></i>asilturizm@gmail.com</a>
+                        <a href="#" class="lower"><i class="fas fa-envelope"></i>celestialpath@gmail.com</a>
                     </div>
                 </div>
                 <div class="ek">
-                    <h3>Sosyal Medya</h3>
+                    <h3>Social Media</h3>
                     <div class="social_icon">
                         <div>
                             <a><i class="fab fa-facebook-f"></i></a>
@@ -111,7 +98,7 @@
                 </div>
             </div>
             <hr class="hr">
-            <p>Mezuniyet Projesi | 2023</p>
+            <p>Celestial Path | 2023</p>
         </footer>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

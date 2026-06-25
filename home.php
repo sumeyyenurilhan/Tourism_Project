@@ -1,16 +1,19 @@
 <?php
-    include("yonetim/ayar.php");
+    include("admin/config.php");
     error_reporting(0);
     session_start();
+    ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE-Edge">
-    <title>Ana Sayfa</title>
+    <title>Celestial Path</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -25,57 +28,46 @@
     <div class="hero">
         <header class="header">
             <nav class="nav">
-                <a href="home.php" aria-label="home"><img src="images/logo.png" class="logo" alt=""></a>
+                <a href="home.php" aria-label="home"><img src="images/logo.png" class="logo" alt="" width="200"></a>
                 <ul class="dropdown">
                     <li><a><img src="images/bar.png" class="bar"></a>
                         <ul>
-                            <li><a href="home.php" class="active">Ana Sayfa</a></li>
-                            <li><a href="about1.php">Hakkımızda</a></li>
-                            <li><a href="travels.php">Seyahatler</a></li>
-                            <li><a href="contact.php">İletişim</a></li>
+                            <li><a href="home.php" class="active">Home</a></li>
+                            <li><a href="about1.php">About</a></li>
+                            <li><a href="travels.php">Travels</a></li>
+                            <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
-                <img src="images/moon.png" id="icon" alt="">
             </nav>
-            <script>
-                var icon = document.getElementById("icon");
-                icon.onclick = function() {
-                    document.body.classList.toggle("dark-theme");
-                    if (document.body.classList.contains("dark-theme")) {
-                        icon.src = "images/sun.png";
-                    } else {
-                        icon.src = "images/moon.png";
-                    }
-                };
-            </script>
             <div class="home">
                 <div class="home-box">
                 <video src="images/tacmahal.mp4" muted autoplay loop class="slider active"></video>
-                <img src="images/gemi.jpg" class="slider" alt="">
-                <video src="images/ucak.mp4" muted autoplay loop class="slider"></video>
+                <img src="images/ship.jpg" class="slider" alt="">
+                <video src="images/plane.mp4" muted autoplay loop class="slider"></video>
                     <div class="content active" data-aos="fade-up">
-                        <h1>Hindistan Ziyaretimiz Yakında</h1>
+                        <h1>India Visit Coming Soon</h1>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
                             to using 'Content here, content here', making it look like readable English.</p>
-                        <a href="travels.php" class="btn">İncele</a>
+                        <a href="travels/tour.php" class="btn">View</a>
                     </div>
                     <div class="content" data-aos="fade-up">
-                        <h1>Okyanus Seyahatlerimiz</h1>
+                        <h1>Ocean Travels</h1>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
                             to using 'Content here, content here', making it look like readable English.</p>
-                        <a href="travels.php" class="btn">İncele</a>
+                        <a href="travels.php" class="btn">View</a>
                     </div>
                     <div class="content" data-aos="fade-up">
-                        <h1>Kaliteli Ulaşım Hizmeti</h1>
+                        <h1>Quality Transportation Service</h1>
                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
                             to using 'Content here, content here', making it look like readable English.</p>
                     </div>
-                </div>
+                    
                 <div class="slider-navigation">
                     <div class="nav-btn"></div>
                     <div class="nav-btn"></div>
                     <div class="nav-btn"></div>
+                </div>
                 </div>
                 <script>
                     const btns = document.querySelectorAll('.nav-btn');
@@ -105,40 +97,40 @@
         </header>
         <div class="class">
             <section class="seasons">
-                <h1 class="heading"><span>Mevsim Turları</span>
+                <h1 class="heading"><span>Seasonal Tours</span>
                     <hr class="hr">
                 </h1>
                 <div class="seasons-box" data-aos="fade-up">
                     <div class="season">
                         <div class="season-box">
-                            <h2>Yaz Turları</h2>
-                            <img src="images/fas.jpg" alt="">
-                            <a href="travels.php"><input type='submit' value='İncele' name='see' class='btn'></a>
+                            <h2>Summer Tours</h2>
+                            <img src="images/morocco.jpg" alt="">
+                            <a href="travels.php"><input type='submit' value='View' name='see' class='btn'></a>
                         </div>
                     </div>
                     <div class="season">
                         <div class="season-box">
-                            <h2>Bahar Turları</h2>
-                            <img src="images/cinbaharı.jpg" alt="">
-                            <a href="travels.php"><input type='submit' value='İncele' name='see' class='btn'></a>
+                            <h2>Spring Tours</h2>
+                            <img src="images/csf.jpg" alt="">
+                            <a href="travels.php"><input type='submit' value='View' name='see' class='btn'></a>
                         </div>
                     </div>
                     <div class="season">
                         <div class="season-box">
-                            <h2>Kış Turları</h2>
-                            <img src="images/norvec.jpg" alt="">
-                            <a href="travels.php"><input type='submit' value='İncele' name='see' class='btn'></a>
+                            <h2>Winter Tours</h2>
+                            <img src="images/norway.jpg" alt="">
+                            <a href="travels.php"><input type='submit' value='View' name='see' class='btn'></a>
                         </div>
                     </div>
                 </div>
             </section><br><br>
             <section class="news">
-                <h1 class="heading"><span>Gezi Günlüğü</span>
+                <h1 class="heading"><span>Travel Diary</span>
                     <hr class="hr">
                 </h1>
                 <div class="container" data-aos="fade-up">
                 <?php
-                    $sorgu = $baglan->query("select * from anasayfa_gezig");
+                    $sorgu = $baglan->query("select * from homepage_tours");
                     while ($satir = $sorgu->fetch_object()) {
                     $resim = substr($satir->resim,3);
                     echo "
@@ -151,20 +143,20 @@
                 </div>
             </section><br><br>
             <section class="works">
-                <h1 class="heading"><span>Seyahatlerimiz</span>
+                <h1 class="heading"><span>Travels</span>
                     <hr class="hr">
                 </h1>
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper" data-aos="fade-up">
                     <?php
-                        $sorgu = $baglan->query("select * from anasayfa_slider");
+                        $sorgu = $baglan->query("select * from homepage_slider");
                         while ($satir = $sorgu->fetch_object()) {
                         $resim = substr($satir->resim,3);
                         echo "
                         <div class='swiper-slide'>
                             <h2>$satir->baslik</h2>
                             <img src='$resim' id='zoom'>
-                            <a href='travels.php'><input type='submit' value='İncele' name='see' class='btn'></a>
+                            <a href='travels.php'><input type='submit' value='View' name='see' class='btn'></a>
                         </div>";}?>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -195,7 +187,7 @@
             </section>
         </div>
         <section class="back">
-            <h3 class="heading"><span>AVUSTRALYA TURU İÇİN REZERVASYON</span></h3>
+            <h3 class="heading"><span>BOOK A RESERVATION FOR AUSTRALIA TOUR</span></h3>
             <div class="sayim" data-aos="fade-up">
                 <div>
                     <p id="days">00</p>
@@ -203,20 +195,20 @@
                 </div>
                 <div>
                     <p id="hours">00</p>
-                    <span>Saat</span>
+                    <span>Hour</span>
                 </div>
                 <div>
                     <p id="minutes">00</p>
-                    <span>Dakika</span>
+                    <span>Minute</span>
                 </div>
                 <div>
                     <p id="seconds">00</p>
-                    <span>Saniye</span>
+                    <span>Second</span>
                 </div>
             </div>
-            <a href="travels/ek4.php" class="btn" data-aos="fade-up">İncele</a>
+            <a href="travels/tour_18.php" class="btn" data-aos="fade-up">View</a>
             <script>
-                var countDownDate = new Date("July 10, 2023 00:00:00").getTime();
+                var countDownDate = new Date("July 10, 2029 00:00:00").getTime();
                 var x = setInterval(function() {
                     var now = new Date().getTime();
                     var distance = countDownDate - now;
@@ -245,30 +237,30 @@
         <footer>
             <div class="container" data-aos="fade-up">
                 <div class="ek" id="ek">
-                    <h3>hazır linkler</h3>
-                    <div><a href="home.php">Ana Sayfa</a></div>
-                    <div><a href="about1.php">Hakkımızda</a></div>
-                    <div><a href="travels.php">Seyahatlerimiz</a></div>
-                    <div><a href="contact.php">İletişim</a></div>
+                    <h3>Quick Links</h3>
+                    <div><a href="home.php">Home</a></div>
+                    <div><a href="about1.php">About</a></div>
+                    <div><a href="travels.php">Travels</a></div>
+                    <div><a href="contact.php">Contact</a></div>
                 </div>
                 <div class="ek" id="ek">
-                    <h3>Seyahatler</h3>
-                    <div><a href="travels.php">Yurt İçi Turlar</a></div>
-                    <div><a href="travels.php">Yurt Dışı Turlar</a></div>
-                    <div><a href="travels.php">Mevsim Turları</a></div>
-                    <div><a href="travels.php">Gemi Turları</a></div>
+                    <h3>Travels</h3>
+                    <div><a href="travels.php">Domestic Tours</a></div>
+                    <div><a href="travels.php">International Tours</a></div>
+                    <div><a href="travels.php">Season Tour</a></div>
+                    <div><a href="travels.php">Ship Tours</a></div>
                 </div>
                 <div class="ek" id="ek">
-                    <h3>İletişim bilgileri</h3>
+                    <h3>Contact</h3>
                     <div>
                         <a href="#"><i class="fas fa-phone"></i>+0213-589-74-10</a>
                     </div>
                     <div>
-                        <a href="#" class="lower"><i class="fas fa-envelope"></i>asilturizm@gmail.com</a>
+                        <a href="#" class="lower"><i class="fas fa-envelope"></i>celestialpath@gmail.com</a>
                     </div>
                 </div>
                 <div class="ek">
-                    <h3>Sosyal Medya</h3>
+                    <h3>Social Media</h3>
                     <div class="social_icon">
                         <div>
                             <a><i class="fab fa-facebook-f"></i></a>
@@ -284,7 +276,7 @@
                 </div>
             </div>
             <hr class="hr">
-            <p>Mezuniyet Projesi | 2023</p>
+            <p>Celestial Path | 2023</p>
         </footer>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

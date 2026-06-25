@@ -2,21 +2,13 @@
  :root {
     --primary-color: #eee;
     --secondary-color: #000;
-    --border-bg: #9b1276;
-    --light-bg: #89c7bf;
-    --border-bold: #00262a;
-    --border-light: #89c7bf;
+    --border-bg: #24031b;
+    --light-bg: #65084c;
+    --border-bold: #000000;
+    --border-light: #ffffff;
 }
-
-.dark-theme {
-    --primary-color: #000;
-    --secondary-color: #eee;
-    --border-bold: #89c7bf;
-    --border-light: #00262a;
-}
-
 * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -36,13 +28,20 @@
 }
 
 *::-webkit-scrollbar-track {
-    background-color: var(--primary-color);
+    background-color: var(--border-bg);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--border-light);
+    background-color: var(--secondary-color);
 }
-
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;       
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
 .hero {
     width: 100%;
     background-color: var(--primary-color);
@@ -64,8 +63,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 8rem;
-    background-color: var(--border-light);
+    height: 6rem;
+    background-color: var(--border-bg);
 }
 
 .header .logo {
@@ -82,22 +81,22 @@ nav ul li {
 nav ul li a::before {
     content: '';
     position: absolute;
-    background: var(--border-bold);
+    background: var(--primary-color);
     width: 0;
-    height: 3px;
+    height: 1px;
     bottom: 0;
     left: 0;
-    transition: 0.3s ease;
+    transition: 0.4s ease;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--secondary-color);
-    transition: 0.3s ease;
+    color: var(--primary-color);
+    transition: 0.4s ease;
 }
 nav ul li a img{
-    width: 4rem;
-    height: 4rem;
+    width: 1rem;
+    height: 1rem;
     position: absolute;
     display: block;
 }
@@ -107,11 +106,11 @@ nav ul li a:hover::before {
 }
 
 nav ul li a.active {
-    color: var(--border-bg);
+    color: var(--primary-color);
 }                                                                                                                                                                                                                                                                                          
 #icon {
     cursor: pointer;
-    width: 3rem;
+    width: 2rem;
 }
 .bar{
     display: none;
@@ -120,25 +119,21 @@ nav ul li a.active {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    text-align: center;
     margin: 0;
 }
 
 .home .home-box {
-    text-align: center;
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
-    justify-content: center;
 }
 
 .home .home-box .content {
     z-index: 999;
     color: white;
-    width: 70%;
-    margin: 35rem 17rem;
+    width: 80%;
+    margin: 20rem 10rem;
     display: none;
     position: absolute;
-    align-items: center;
 }
 
 .home .home-box .content.active {
@@ -194,7 +189,27 @@ nav ul li a.active {
     transition: 2s ease;
     transition-property: clip-path;
 }
-
+.home .home-box .slider-navigation {
+    position: absolute;
+    z-index: 999;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home .home-box .slider-navigation .nav-btn {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.home .home-box .slider-navigation .nav-btn.active {
+    background-color: var(--light-bg);
+}
 .home::before {
     z-index: 777;
     content: '';
@@ -207,50 +222,29 @@ nav ul li a.active {
     background: rgba(0, 0, 0, 0.7);
 }
 
-.home .slider-navigation {
-    z-index: 999;
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(57rem);
-    padding-left: 55.25rem;
-}
-
-.home .slider-navigation .nav-btn {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background: var(--light-bg);
-    transition: 0.3s ease;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-}
-
-.home .slider-navigation .nav-btn:not(:last-child) {
-    margin-right: 1rem;
-}
-
-.home .slider-navigation .nav-btn:hover {
-    transform: scale(1.3);
-}
 
 .hr {
     height: 0.25rem;
-    background: var(--secondary-color);
+    background: var(--primary-color);
     border: none;
 }
 
 .class {
-    overflow: hidden !important;
     margin: 0 auto;
-    width: 70%;
+    width: 80%;
     text-align: center;
+    justify-content: center;
 }
 
 .seasons {
     margin-top: 6rem;
     width: 100%;
     min-height: 45rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .seasons .seasons-box {
@@ -261,15 +255,15 @@ nav ul li a.active {
 }
 
 .seasons .season .season-box {
-    width: 25rem;
+    width: 20rem;
     text-align: center;
-    border: var(--border-bold);
+    border: var(--border-bg);
 }
 
 .seasons .season .season-box h2 {
     display: block;
     font-size: 2rem;
-    color: var(--border-bold);
+    color: var(--border-bg);
 }
 
 .seasons .season .season-box img {
@@ -312,12 +306,12 @@ nav ul li a.active {
     margin-top: 1rem;
 }
 
-.news .container {
+.container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .news .container .box {
@@ -325,7 +319,6 @@ nav ul li a.active {
     width: 20rem;
     margin: 1rem;
     margin-top: 3rem;
-    margin-left: 4rem;
     border: var(--border-bold);
     border-style: solid;
     border-width: medium;
@@ -362,6 +355,9 @@ nav ul li a.active {
     margin-top: 7rem;
 }
 .works .swiper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     width: 100%;
     height: 50rem;
     padding: 2rem;
@@ -399,7 +395,7 @@ nav ul li a.active {
     transition: all 1s ease;
 }
 
-.swiper-pagination {
+.works .swiper .swiper-pagination {
     color: var(--light-bg);
 }
 
@@ -465,7 +461,7 @@ nav ul li a.active {
 footer {
     position: absolute;
     width: 100%;
-    background-color: var(--border-light);
+    background-color: var(--border-bg);
     padding: 3rem;
     padding-bottom: 1rem;
     display: row;
@@ -485,7 +481,6 @@ footer .container .social_icon,
 footer .container .ek {
     position: relative;
     align-items: center;
-    margin: 2rem 0;
     text-decoration: none;
     list-style: none;
 }
@@ -497,7 +492,7 @@ footer .container .social_icon {
 
 footer .container .social_icon div {
     display: block;
-    margin-top: 3rem;
+    margin-top: 2rem;
     align-items: center;
 }
 
@@ -510,13 +505,13 @@ footer .container .ek div {
 
 footer .container #ek div:hover {
     transform: translateY(-1rem);
-    color: var(--light-bg);
+    color: var(--primary-color);
 }
 
 footer .container .social_icon div a,
 footer .container .ek div a {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
+    font-size: 1.25rem;
+    color: var(--primary-color);
     margin: 1rem 0;
     display: inline-block;
     text-decoration: none;
@@ -535,19 +530,19 @@ footer .container .social_icon div a:hover {
 
 footer .container h3,
 footer .container .ek h3 {
-    color: var(--border-bg);
+    color: var(--light-bg);
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 footer .container div a i {
-    color: var(--border-bold);
+    color: var(--primary-color);
     transition: 2s linear;
-    padding: 2rem;
+    padding: 5px;
 }
 
 footer p {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-align: center;
     margin-top: 1rem;
 }
@@ -635,48 +630,67 @@ footer p {
 }
 
 .about {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 10rem auto 5rem auto;
     align-items: center;
     justify-content: center;
     width: 70%;
     min-height: 52rem;
     margin-top: 13rem;
-    background: #00262ac2;
-    position: center;
-    margin-left: 18rem;
+    background: #3a4141c2;
     --webkit-backdrop-filter: blur(10rem);
     --backdrop-filter: blur(10rem);
 }
 
 .contact {
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    min-height: 52rem;
-    margin-top: 13rem;
-    background: #00262ac2;
-    position: center;
-    margin-left: 30rem;
+    background: #3a4141c2;
     --webkit-backdrop-filter: blur(10rem);
     --backdrop-filter: blur(10rem);
+    
+    /* Flexbox ile içindeki formu tam ortalıyoruz */
+    display: flex;
+    flex-direction: column;   
+    align-items: center;      /* Yatayda ortalar */
+    justify-content: center;  /* Dikeyde ortalar */
+    
+    /* Sabit margin-left yerine sayfaya göre ortalamak için */
+    width: 50%;
+    min-height: 35rem;
+    margin: 15rem auto auto auto; /* Üstten 15rem boşluk bırakır, sağdan soldan otomatik ortalar */
+    
+    /* AOS çakışmasını ve butonun tıklanmasını çözen kritik kısım */
+    position: relative;
+    z-index: 5; 
 }
 
+/* Form Elemanlarını Kendi İçinde Ortalamak İçin */
 .contact form {
-    max-width: 45rem;
-    margin: 0 auto;
     background: none;
-    background-color: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; /* Formun içindeki tüm inputları ve butonu tam ortalar */
+    padding: 2rem;
 }
 
+/* Butonun Kendisi */
 .contact form .btn1 {
     box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.99);
     display: inline-block;
-    padding: 1rem 3rem;
-    background: none;
+    padding: 1rem 2rem;
     background-color: var(--light-bg);
     color: var(--border-bg);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     border: none;
-    margin-left: 15rem;
+    
+    /* Ortalama flex ile yapıldığı için buradaki sola kaydıran margini sildik */
+    margin-bottom:2rem; 
+    
+    /* Butonu en üste çıkarıp tıklanabilir yapıyoruz */
+    position: relative;
+    z-index: 10;
+    cursor: pointer; 
 }
 
 .contact form .btn1:hover {
@@ -685,14 +699,15 @@ footer p {
 }
 
 .contact form .box {
-    width: 100%;
-    padding: 1.3rem;
-    font-size: 2rem;
+    width: 40rem;
+    padding: 0.5rem;
+    font-size: 1.25rem;
     text-transform: none;
     border: none;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     background-color: none;
     background: none;
+    text-align:start;
 }
 
 .contact form .box::-webkit-input-placeholder {
@@ -707,7 +722,9 @@ footer p {
 }
 
 .hr1 {
-    height: 0.25rem;
+    width: 100%;
+    max-width: 40rem;
+    height: 0.15rem;
     background: var(--primary-color);
     border: none;
 }
@@ -719,25 +736,20 @@ footer p {
 
 .message {
     width: 30rem;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     display: flex;
     justify-content: space-between;
     padding: 0.25rem 1.25rem;
     background-color: var(--border-light);
     height: 3rem;
     margin: 2rem;
-    margin-left: 44rem;
+    margin-left: 35rem;
 }
 
 .message span {
     color: var(--border-bg);
 }
 
-.message i {
-    cursor: pointer;
-    color: var(--border-bg);
-    margin-top: 0.50rem;
-}
 
 .high2 {
     width: 100%;
@@ -751,15 +763,14 @@ footer p {
 }
 
 .travels {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    width: 70%;
-    min-height: 30rem;
-    margin-top: 15rem;
-    margin-bottom: 6rem;
-    background: #00262ac2;
-    position: center;
-    margin-left: 18rem;
+    width: 80%;
+    margin: 10rem auto 5rem auto;
+    min-height: 100rem;
+    background: #3a4141c2;
     --webkit-backdrop-filter: blur(10rem);
     --backdrop-filter: blur(10rem);
 }
@@ -767,67 +778,63 @@ footer p {
 .travels .container {
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 3rem;
+    gap: 2rem;
     padding: 2rem;
     justify-content: space-between;
 }
 
 .travels .container .travel {
-    min-height: 42rem;
+    min-height: 40rem;
     max-width: 30rem;
-    border-bottom: var(--border-light);
-    border-style: solid;
     border-width: medium;
     border-top: none;
     border-left: none;
     border-right: none;
     margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: center;
-    padding-bottom: 3rem;
 }
 
 .travels .container .travel h2 {
-    display: block;
-    font-size: 2.20rem;
+    font-size: 2rem;
+    margin: 0rem 0rem 3rem 0rem;
     color: var(--light-bg);
+    min-height: 5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    min-height: 7rem;
 }
 
 .travels .container .travel img {
-    width: 22rem;
-    height: 22rem;
+    width: 20rem;
+    height: 20rem;
     object-fit: cover;
     border: var(--secondary-color);
     border-style: solid;
     border-width: medium;
-    margin-left: 0.75rem;
 }
 
 .travels .container .travel p {
     font-size: 1rem;
     color: white;
     margin: 1rem;
-    text-align: justify;
+    text-align: center;
 }
 
-.travels .container .travel a {
-    align-items: center;
-    margin-left: 6.75rem;
-}
 .ekler {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 70%;
-    min-height: 45rem;
-    margin-top: 15rem;
-    background: #00262ac2;
-    position: center;
-    margin-left: 18rem;
+    background: #3a4141c2;
     --webkit-backdrop-filter: blur(10rem);
     --backdrop-filter: blur(10rem);
+    margin: 10rem auto 5rem auto;
 }
 
 .ekler .container {
@@ -867,10 +874,10 @@ footer p {
 
 
 @media (max-width:1400px) {
-    .hero {
-        min-height: 150vh;
+    body {
+        width: 100%;
+        margin: 0;
     }
-    
     .hero header nav {
         padding: 4rem 4rem;
     }
@@ -888,40 +895,40 @@ footer p {
     #icon {
         width: 2rem;
     }
-    
-    .home .home-box .content {
-        margin: 32rem 12rem;
+    .home {
+        min-height: 60vh;
     }
-    
+    .home .home-box .content h1 {
+        font-size: 2.5rem;
+    }
     .home .content a {
         font-size: 1.5rem;
     }
-    
-    .home .slider-navigation {
-        padding-left: 40.25rem;
-    }
     .seasons {
-        margin-top: 6rem;
-        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 0 auto;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+
     }
-    
-    .seasons .season .season-box {
-        width: 20rem;
+    .seasons .seasons-box {
+        margin: 1rem;
     }
-    
-    .seasons .season .season-box h2 {
-        font-size: 2rem;
-    }
-    
-    .seasons .season .season-box img {
-        width: 17rem;
-        height: 17rem;
-    }
-    
     .works .swiper .swiper-slide h2 {
         font-size: 1.15rem;
     }
-    
+    .news .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    }
+    .back .heading span{
+        font-size: 1.5rem;
+    }
+    .back .sayim {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
     footer .container h3,
     footer .container .ek h3 {
         font-size: 2rem;
@@ -936,28 +943,39 @@ footer p {
         margin-left: 6rem;
     }
     .contact {
-        width: 50%;
-        margin-left: 22rem;
+        width: 90%;
     }
-    
+    .contact form {
+        align-items: center;
+        justify-content: center;
+    }
+    .contact form .box {
+        max-width: 40rem;
+    }
     .contact form .btn1 {
-        margin-left: 14rem;
+        display: block;
     }
-    .travels {
-        width: 92%;
-        margin-left: 3rem;
+    .travels .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0 auto;
     }
-
+    .travels .container .travel img {
+        width: 15rem;
+        height: 15rem;
+        
+    }
     .ekler {
-        width: 80%;
-        margin-left: 8rem;
+        width: 90%;
     }
     
 }
 
-@media (max-width:650px) {
+@media (max-width:790px) {
     .hero {
-        min-height: 250vh;
+        min-height: 240vh;
     }
     .hero header nav {
         padding: 3rem 4rem;
@@ -990,7 +1008,7 @@ footer p {
     .dropdown > li ul {
         position: absolute;
         display: none;
-        width: 15rem;
+        width: 25rem;
         margin-top: 5rem;
         top: 0;
     }
@@ -1005,23 +1023,33 @@ footer p {
     .dropdown > li:hover .bar{
         display: none;
     }
-    .home .home-box .content {
-        margin: 28rem 5.5rem;
+    .home {
+        width: 100%;
+        min-height: 90vh;
+        margin: 0;
     }
-    .home .content h1{
-        font-size: 2rem;
+    .home .home-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 0 auto;
+        padding-top: 25rem;
+    }
+    .home .home-box .content h1{
+        font-size: 1.5rem;
     }
     .home .content p{
         font-size: 0.75rem;
+        margin: 0.5rem 0;
         margin-bottom: 1rem;
+
     }
-    .home .content a {
+    .home .home-box .content a {
         font-size: 1.5rem;
     }
     
-    .home .slider-navigation {
-        padding-left: 16.5rem;
-    }
     .seasons {
         margin-top: 6rem;
         min-height: 100rem;
@@ -1029,41 +1057,35 @@ footer p {
     
     .seasons .seasons-box {
         margin-top: 3rem;
-        display: grid;
-        grid-template-rows: minmax(15rem,1fr);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 0 auto;
     }
-    
-    .seasons .season .season-box {
-        width: 20rem;
-        margin-left: 3.5rem;
-        margin-bottom: 2rem;
+    .seasons .season-box h2 {
+        text-align: center;
     }
-    
-    .seasons .season .season-box h2 {
-        font-size: 2rem;
-    }
-    
     .seasons .season .season-box img {
         width: 20rem;
         height: 20rem;
+        margin-bottom: 1rem;
     }
     .heading span {
         font-size: 2rem;
     }
     
     .news .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+        display:flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+
     }
-    
-    .news .container .box {
-        margin-left: 5rem;
-    }
-    
     .news .container .box h3 {
         margin: 0.5rem 1rem;
         font-size: 2rem;
-        color: var(--primary-color);
     }
     
     .works {
@@ -1071,8 +1093,10 @@ footer p {
     }
     .works .swiper {
         height: 35rem;
-        display: grid;
-        grid-template-columns: minmax(30rem,1fr);
+        margin: 0 auto;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
     }
 
     .works .swipper .swiper-wrapper {
@@ -1144,33 +1168,24 @@ footer p {
         padding-bottom: 2rem;
     }
     .contact {
-        width: 85%;
-        margin-left: 3rem;
+        width: 90%;
     }
-    
-    .contact form .btn1 {
-        margin-left: 8rem;
-    }
-    .travels {
-        width: 70%;
-        margin-left: 6rem;
+    .contact form .box{
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
     .travels .container {
-        display: grid;
-        grid-template-columns: auto;
-    }
-    .ekler {
-        width: 80%;
-        margin-left: 4rem;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
     }
 
     .ekler .container {
         display: block;
     }
 
-    .ekler .container .image {
-        border-right: none;
-        padding-left: 3rem;
-    }
 }
